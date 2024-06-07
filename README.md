@@ -4,7 +4,30 @@
 
 # Wiki
 
+<br><br>
+<br><br>
 
+## Gas
+-  Ist eine Einheit, die für die Messung der Rechenarbeit verwendet wird, die zur Durchführung von Transaktionen oder zur Ausführung von Smart Contracts auf der Ethereum-Plattform erforderlich ist.
+
+<br><br>
+
+### GasUsed
+- Bezieht sich auf die Menge an Gas, die für eine einzelne Transaktion verwendet wurde.
+
+<br><br>
+
+### cumulativeGasUsed
+- Ist die Summe des Gases, das von allen Transaktionen in einem Block verbraucht wurde, bis einschließlich der aktuellen Transaktion. Es ist also ein kumulativer Wert.
+
+
+
+
+
+
+
+<br><br>
+<br><br>
 <br><br>
 <br><br>
 
