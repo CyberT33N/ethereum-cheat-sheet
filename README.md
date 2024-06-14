@@ -7,8 +7,69 @@
 
 
 
+
+
+
+
+
+
+
+
+## Smart Contracts
+
+### Überblick
+
+Smart Contracts sind selbstausführende Verträge, bei denen die Bedingungen der Vereinbarung direkt in Code geschrieben sind. Sie laufen auf Blockchains und ermöglichen es, vertrauenswürdige Transaktionen und Vereinbarungen ohne eine zentrale Autorität durchzuführen.
+
+### Ethereum
+
+#### Überblick
+Ethereum ist die führende Plattform für die Erstellung und Bereitstellung von Smart Contracts. Es verwendet die Ethereum Virtual Machine (EVM), um den Code auszuführen.
+
+#### Eigenschaften
+- **Programmiersprachen:** Primär Solidity, aber auch Vyper und andere.
+- **EVM:** Führt Smart Contracts auf der Blockchain aus.
+- **Gas:** Transaktionen erfordern Gas, eine Gebühr, die in Ether (ETH) bezahlt wird.
+
+#### Schlüsselfunktionen
+- **ERC20:** Standard für fungible Token.
+- **ERC721:** Standard für nicht-fungible Token (NFTs).
+- **Dezentralisierte Anwendungen (DApps):** Anwendungen, die auf Smart Contracts basieren.
+
+#### Beispiel
+```solidity
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    uint256 public data;
+
+    function set(uint256 _data) public {
+        data = _data;
+    }
+
+    function get() public view returns (uint256) {
+        return data;
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
+
+<br><br>
+<br><br>
+
 
 
 ## Dezentrale Börsen (DEX) und Automated Market Maker (AMM) Protokolle
