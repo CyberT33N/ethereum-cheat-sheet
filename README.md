@@ -4,6 +4,78 @@
 
 # Wiki
 
+
+
+
+<br><br>
+<br><br>
+
+
+## Dezentrale Börsen (DEX) und Automated Market Maker (AMM) Protokolle
+
+### Uniswap
+
+#### Überblick
+Uniswap ist ein dezentrales Austauschprotokoll (DEX) auf der Ethereum-Blockchain. Es ermöglicht den Tausch von ERC20-Token direkt zwischen Nutzern mittels automatischer Marktliquidität (AMM).
+
+#### Eigenschaften
+- **Automatisches Market Making:** Verwendet ein Constant Product Market Making Modell.
+- **ERC20-Token Unterstützung:** Unterstützt den Tausch einer Vielzahl von ERC20-Token.
+- **Uniswap V2 und V3:** Bietet verschiedene Versionen mit unterschiedlichen Funktionen und Optimierungen.
+
+#### Schlüsselfunktionen
+- **Liquidity Pools:** Nutzer können Liquidität bereitstellen und verdienen Handelsgebühren.
+- **Swap-Funktionalität:** Ermöglicht den sofortigen Tausch von Token ohne Orderbuch.
+
+#### Website
+[Uniswap](https://uniswap.org/)
+
+---
+
+### SushiSwap
+
+#### Überblick
+SushiSwap ist ein Fork von Uniswap, der zusätzliche Funktionen und Governance-Aspekte integriert hat.
+
+#### Eigenschaften
+- **Erweiterte Funktionen:** Bietet Funktionen wie Yield Farming und Staking.
+- **SUSHI Token:** Eigenes Governance-Token für Nutzer des Protokolls.
+- **SushiSwap AMM:** Verbesserte Version des AMM-Modells von Uniswap.
+
+#### Schlüsselfunktionen
+- **MasterChef:** Belohnungsprogramm für Yield Farming.
+- **Onsen:** Temporäre Incentives für bestimmte Liquiditätspools.
+
+#### Website
+[SushiSwap](https://sushi.com/)
+
+---
+
+### Weitere AMM-Protokolle
+
+#### Curve Finance
+- Spezialisiert auf Stablecoin-Tausch mit geringen Slippage-Raten.
+- Besondere Anpassungen für Stablecoin-Paare.
+
+#### Balancer
+- Ermöglicht das Erstellen von benutzerdefinierten Pools mit unterschiedlichen Gewichtungen.
+- Unterstützt auch Stablecoin-Paare und andere Token.
+
+#### Bancor
+- Verwendet ein einzigartiges System der permanenten Liquidität, um den Handel zu erleichtern.
+- Ermöglicht direktes Tauschen von Token ohne gegen eine andere Partei zu handeln.
+
+---
+
+Diese Protokolle sind grundlegende Bausteine der dezentralen Finanzwelt (DeFi) und bieten eine alternative Möglichkeit zum traditionellen Börsenhandel durch ihre dezentrale und automatisierte Natur.
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
 
@@ -68,6 +140,31 @@ Three dots -> Accounts details -> Show private key
 ## Passphrase
 
 Eine **Passphrase** ist eine zusätzliche Sicherheitsschicht, die verwendet wird, um den Private Key zu verschlüsseln. Sie wird oft in Form eines Mnemonischen Phrasensets (auch Seed Phrase genannt) dargestellt, das aus 12, 18 oder 24 Wörtern besteht:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
