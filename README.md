@@ -52,28 +52,28 @@ Insgesamt sind Paare die grundlegenden Bausteine für den Handel auf dezentralen
 <br><br>
 
 
-## Smart Contracts
+# Smart Contracts
 
-### Überblick
+## Überblick
 
 Smart Contracts sind selbstausführende Verträge, bei denen die Bedingungen der Vereinbarung direkt in Code geschrieben sind. Sie laufen auf Blockchains und ermöglichen es, vertrauenswürdige Transaktionen und Vereinbarungen ohne eine zentrale Autorität durchzuführen.
 
-### Ethereum
+## Ethereum
 
-#### Überblick
+### Überblick
 Ethereum ist die führende Plattform für die Erstellung und Bereitstellung von Smart Contracts. Es verwendet die Ethereum Virtual Machine (EVM), um den Code auszuführen.
 
-#### Eigenschaften
+### Eigenschaften
 - **Programmiersprachen:** Primär Solidity, aber auch Vyper und andere.
 - **EVM:** Führt Smart Contracts auf der Blockchain aus.
 - **Gas:** Transaktionen erfordern Gas, eine Gebühr, die in Ether (ETH) bezahlt wird.
 
-#### Schlüsselfunktionen
+### Schlüsselfunktionen
 - **ERC20:** Standard für fungible Token.
 - **ERC721:** Standard für nicht-fungible Token (NFTs).
 - **Dezentralisierte Anwendungen (DApps):** Anwendungen, die auf Smart Contracts basieren.
 
-#### Beispiel
+### Beispiel
 ```solidity
 pragma solidity ^0.8.0;
 
@@ -109,6 +109,22 @@ contract SimpleStorage {
 
 
 
+<br><br>
+<br><br>
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+<br><br>
+<br><br>
+
+
+# Token-Standard
+
+<br><br>
+
+## ERC20
+- https://github.com/ethereum/ercs/blob/master/ERCS/erc-20.md
+
+
+
 
 
 
@@ -116,6 +132,7 @@ contract SimpleStorage {
 
 <br><br>
 <br><br>
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 <br><br>
 <br><br>
 
@@ -164,6 +181,11 @@ Das Verständnis und die korrekte Implementierung von ABIs sind entscheidend fü
 
 
 
+<br><br>
+<br><br>
+
+
+
 
 
 
@@ -183,62 +205,63 @@ Das Verständnis und die korrekte Implementierung von ABIs sind entscheidend fü
 
 <br><br>
 <br><br>
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 <br><br>
 <br><br>
 
 
 
-## Dezentrale Börsen (DEX) und Automated Market Maker (AMM) Protokolle
+# Dezentrale Börsen (DEX) und Automated Market Maker (AMM) Protokolle
 
-### Uniswap
+## Uniswap
 
-#### Überblick
+ Überblick
 Uniswap ist ein dezentrales Austauschprotokoll (DEX) auf der Ethereum-Blockchain. Es ermöglicht den Tausch von ERC20-Token direkt zwischen Nutzern mittels automatischer Marktliquidität (AMM).
 
-#### Eigenschaften
+### Eigenschaften
 - **Automatisches Market Making:** Verwendet ein Constant Product Market Making Modell.
 - **ERC20-Token Unterstützung:** Unterstützt den Tausch einer Vielzahl von ERC20-Token.
 - **Uniswap V2 und V3:** Bietet verschiedene Versionen mit unterschiedlichen Funktionen und Optimierungen.
 
-#### Schlüsselfunktionen
+### Schlüsselfunktionen
 - **Liquidity Pools:** Nutzer können Liquidität bereitstellen und verdienen Handelsgebühren.
 - **Swap-Funktionalität:** Ermöglicht den sofortigen Tausch von Token ohne Orderbuch.
 
-#### Website
+### Website
 [Uniswap](https://uniswap.org/)
 
 ---
 
-### SushiSwap
+## SushiSwap
 
-#### Überblick
+### Überblick
 SushiSwap ist ein Fork von Uniswap, der zusätzliche Funktionen und Governance-Aspekte integriert hat.
 
-#### Eigenschaften
+### Eigenschaften
 - **Erweiterte Funktionen:** Bietet Funktionen wie Yield Farming und Staking.
 - **SUSHI Token:** Eigenes Governance-Token für Nutzer des Protokolls.
 - **SushiSwap AMM:** Verbesserte Version des AMM-Modells von Uniswap.
 
-#### Schlüsselfunktionen
+### Schlüsselfunktionen
 - **MasterChef:** Belohnungsprogramm für Yield Farming.
 - **Onsen:** Temporäre Incentives für bestimmte Liquiditätspools.
 
-#### Website
+### Website
 [SushiSwap](https://sushi.com/)
 
 ---
 
-### Weitere AMM-Protokolle
+## Weitere AMM-Protokolle
 
-#### Curve Finance
+### Curve Finance
 - Spezialisiert auf Stablecoin-Tausch mit geringen Slippage-Raten.
 - Besondere Anpassungen für Stablecoin-Paare.
 
-#### Balancer
+### Balancer
 - Ermöglicht das Erstellen von benutzerdefinierten Pools mit unterschiedlichen Gewichtungen.
 - Unterstützt auch Stablecoin-Paare und andere Token.
 
-#### Bancor
+### Bancor
 - Verwendet ein einzigartiges System der permanenten Liquidität, um den Handel zu erleichtern.
 - Ermöglicht direktes Tauschen von Token ohne gegen eine andere Partei zu handeln.
 
@@ -253,20 +276,29 @@ Diese Protokolle sind grundlegende Bausteine der dezentralen Finanzwelt (DeFi) u
 
 
 
+
+
+
+
+
+<br><br>
+<br><br>
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 <br><br>
 <br><br>
 
-## Gas
+
+# Gas
 -  Ist eine Einheit, die für die Messung der Rechenarbeit verwendet wird, die zur Durchführung von Transaktionen oder zur Ausführung von Smart Contracts auf der Ethereum-Plattform erforderlich ist.
 
 <br><br>
 
-### GasUsed
+## GasUsed
 - Bezieht sich auf die Menge an Gas, die für eine einzelne Transaktion verwendet wurde.
 
 <br><br>
 
-### cumulativeGasUsed
+ cumulativeGasUsed
 - Ist die Summe des Gases, das von allen Transaktionen in einem Block verbraucht wurde, bis einschließlich der aktuellen Transaktion. Es ist also ein kumulativer Wert.
 
 
@@ -275,10 +307,24 @@ Diese Protokolle sind grundlegende Bausteine der dezentralen Finanzwelt (DeFi) u
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 <br><br>
 <br><br>
+
 
 ## Accounts
 
