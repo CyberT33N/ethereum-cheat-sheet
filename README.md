@@ -140,6 +140,7 @@ contract SimpleStorage {
 
 
 # ABI - Application Binary Interface
+- **Auf Blockchain Explorer wie z.b. Etherscan kann man den Contract und den jeweiligen ABI zu einem Token sehen. Diesen ABI kann man verwendetn um mit web3.js einen Contract zu erstellen**
 
 ## Definition
 
@@ -170,13 +171,84 @@ ABI steht für "Application Binary Interface" (Anwendungs-Binär-Schnittstelle).
 - ARM EABI für eingebettete ARM-Systeme
 
 ## Herausforderungen
-
 - Änderungen am ABI können zu Inkompatibilitäten führen
 - Verschiedene Compiler können unterschiedliche ABIs für die gleiche Architektur erzeugen
 - Plattformübergreifende Entwicklung erfordert oft die Berücksichtigung mehrerer ABIs
 
-## Fazit
+# Ethereum Smart Contract ABI Methodennamen
 
+## Überblick
+
+Die Methodennamen in einem Ethereum-Smart-Contract-ABI (Application Binary Interface) sind nicht standardisiert oder universell identisch. Die Namen und Signaturen von Methoden in einem ABI werden beim Erstellen des Smart Contracts vom Entwickler definiert und können von Contract zu Contract unterschiedlich sein.
+
+### Wichtige Punkte
+
+1. **Entwicklerspezifisch**
+   - Die Namen der Methoden sind vollständig vom Entwickler des Smart Contracts definiert. Daher können verschiedene Contracts, selbst wenn sie ähnliche Funktionalitäten bieten, unterschiedliche Namen verwenden.
+
+2. **Kollisionsgefahr**
+   - Bei Contracts von verschiedenen Entwicklern oder für unterschiedliche Zwecke kann es zu Namensüberschneidungen kommen. Beispielsweise könnte ein Contract `getTaxThreshold()` und ein anderer `taxSwapThreshold()` verwenden, obwohl beide ähnliche Funktionalitäten bieten.
+
+3. **Standardisierte Methoden**
+   - Einige Methoden sind in bekannten Standards wie ERC-20 oder ERC-721 definiert und haben standardisierte Namen, z.B. `transfer`, `approve`, `balanceOf` bei ERC-20 Tokens. Diese Namen sind in den jeweiligen Standards festgelegt und daher konsistent.
+
+4. **Benutzerdefinierte Methoden**
+   - Für spezifische Funktionen oder Implementierungen können die Methodennamen benutzerdefiniert sein. Ein Contract könnte Methoden wie `_taxSwapThreshold` oder `_maxTxAmount` verwenden, die speziell für diesen Contract entwickelt wurden und nicht notwendigerweise in anderen Contracts zu finden sind.
+
+### Beispiel
+
+Hier ist ein Überblick über häufige und benutzerdefinierte Methodennamen:
+
+- **Standardisierte Namen (z.B. ERC-20):**
+  - `transfer`
+  - `approve`
+  - `balanceOf`
+  - `allowance`
+
+- **Benutzerdefinierte Namen:**
+  - `_taxSwapThreshold`
+  - `isFree_AnyERC20Tokens`
+  - `caLimiter`
+  - `addToBlackList`
+
+## Verwendung von Web3.js mit ABI
+
+Um Methoden eines Smart Contracts aufzurufen, müssen Sie das ABI des spezifischen Contracts verwenden, mit dem Sie arbeiten möchten. Hier ist ein Beispiel, wie Sie dies in TypeScript tun können:
+
+```typescript
+import Web3 from 'web3';
+
+class ContractInteraction {
+  private web3: Web3;
+  private contract: any;
+
+  constructor(provider: string, contractAddress: string, abi: any[]) {
+    this.web3 = new Web3(provider);
+    this.contract = new this.web3.eth.Contract(abi, contractAddress);
+  }
+
+  async callMethod(methodName: string, ...args: any[]): Promise<any> {
+    if (!this.contract.methods[methodName]) {
+      throw new Error(`Method ${methodName} does not exist in the contract ABI.`);
+    }
+    return this.contract.methods[methodName](...args).call();
+  }
+}
+
+// Usage
+const provider = 'https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID';
+const contractAddress = '0x08c4bb1def099bca4c6b84ebb4e7d0f4eac2f3c9';
+const abi = [ /* Ihr ABI hier */ ];
+
+const contract = new ContractInteraction(provider, contractAddress, abi);
+
+contract.callMethod('_taxSwapThreshold')
+  .then(console.log)
+  .catch(console.error);
+```
+
+
+## Fazit
 Das Verständnis und die korrekte Implementierung von ABIs sind entscheidend für die Entwicklung von interoperabler und langlebiger Software, insbesondere in heterogenen Systemumgebungen.
 
 
