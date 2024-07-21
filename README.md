@@ -123,8 +123,21 @@ contract SimpleStorage {
 ## ERC20
 - https://github.com/ethereum/ercs/blob/master/ERCS/erc-20.md
 
+### Standardmethoden
 
+Diese Methoden sind Teil der ERC-20 Schnittstelle oder sind allgemein in Ethereum Smart Contracts verwendet.
 
+#### ERC-20 Standardmethoden:
+- `totalSupply()`: Gibt die gesamte Menge an Token im Umlauf zurück.
+- `balanceOf(address account)`: Gibt den Kontostand eines bestimmten Kontos zurück.
+- `transfer(address recipient, uint256 amount)`: Überträgt eine bestimmte Menge an Token an einen Empfänger.
+- `allowance(address owner, address spender)`: Gibt die erlaubte Menge an Token zurück, die ein Spender vom Besitzer ausgeben darf.
+- `approve(address spender, uint256 amount)`: Genehmigt einen Spender, eine bestimmte Menge an Token vom Besitzer auszugeben.
+- `transferFrom(address sender, address recipient, uint256 amount)`: Überträgt eine bestimmte Menge an Token von einem Sender an einen Empfänger, vorausgesetzt, der Sender hat genug erlaubte Token.
+
+#### ERC-20 Events:
+- `Transfer(address indexed from, address indexed to, uint256 value)`: Wird ausgelöst, wenn Token übertragen werden.
+- `Approval(address indexed owner, address indexed spender, uint256 value)`: Wird ausgelöst, wenn die Genehmigung für die Übertragung von Token erteilt wird.
 
 
 
