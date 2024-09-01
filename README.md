@@ -580,6 +580,19 @@ _________________________________________________________
 
 - **There are different versions v2, v3, v4 and each version ist not tradeable with the other version**
 
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+
 ## v2
 - https://docs.uniswap.org/contracts/v2/overview
 
@@ -606,6 +619,65 @@ _________________________________________________________
 - Emitted each time a pair is created via createPair.
 - token0 is guaranteed to be strictly less than token1 by sort order.
 - The final uint log value will be 1 for the first pair created, 2 for the second, etc. (see allPairs/getPair).
+```javascript
+import { Web3 } from 'web3'
+
+const providerUrl = 'https://mainnet.infura.io/v3/xxxxxxxxxxxxxxxxxxx4'
+const web3 = new Web3(providerUrl)
+
+const UNISWAP_FACTORY_ADDRESS = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
+
+const FACTORY_ABI = [
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "token0",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "token1",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "pair",
+        "type": "address"
+      }
+    ],
+    "name": "PairCreated",
+    "type": "event"
+  }
+];
+
+// Create a contract instance
+const uniswapFactory = new web3.eth.Contract(FACTORY_ABI, UNISWAP_FACTORY_ADDRESS);
+
+// Subscribe to PairCreated events
+const myEvent = await uniswapFactory.events.PairCreated({
+    fromBlock:  'latest'
+})
+
+console.log('Subscribed to PairCreated events')
+
+myEvent.on('data', (event) => {
+  console.log(`New pair created! Token0: ${event.returnValues.token0}, Token1: ${event.returnValues.token1}, Pair Address: ${event.returnValues.pair}`);
+})
+
+myEvent.on('error', (error) => {
+  console.error(error);
+})
+```
+
+
+
+
+
 
 
 
@@ -618,7 +690,62 @@ _________________________________________________________
 
 ## v3
 - https://docs.uniswap.org/contracts/v3/overview
-- 
+
+<br><br>
+<br><br>
+
+### Wichtige Contracts für Uniswap V3
+
+| Contract Name                        | Funktion                                                                                          |
+|--------------------------------------|---------------------------------------------------------------------------------------------------|
+| **UniswapV3Factory**                 | Erstellt und verwaltet Pools (nicht direkt für Trading).                                           |
+| **SwapRouter / SwapRouter02**        | Führt die eigentlichen Swaps durch (Tokens kaufen/verkaufen).                                      |
+| **Quoter / QuoterV2**                | Gibt Preisinformationen für Swaps (Preisschätzung vor einem echten Handel).                        |
+| **Multicall / Multicall2**           | Führt mehrere Calls in einer einzigen Transaktion aus (Gas sparen, komplexe Interaktionen).        |
+| **NonfungiblePositionManager**       | Verwalten von Liquiditätspositionen als NFTs in V3 (für Bereitstellung/Entfernung von Liquidität). |
+| **TickLens**                         | Ruft Tick-Informationen ab, die für Gebühren und Liquiditätsbereich relevant sind.                |
+| **V3Migrator**                       | Ermöglicht die Migration von Positionen von Uniswap V2 zu V3.                                      |
+| **UniversalRouter**                  | Bietet erweiterten Routing-Support für komplexere Swap-Logiken.                                   |
+| **Permit2**                          | Erlaubt Transaktionen mit erweiterter Genehmigungslogik (Gas-Einsparungen und Benutzerfreundlichkeit).|
+
+## Muss alles über Uniswap laufen?
+
+- **Nein**, du musst nicht ausschließlich Uniswap verwenden. Andere DEXs oder Aggregatoren können bessere Liquidität oder Gebühren bieten.
+- Berücksichtige spezialisierte DEXs auf Layer 2 Netzwerken wie Arbitrum, Optimism oder zkSync.
+
+## Wichtige Punkte bei der Integration von ETH Layer 2 Tokens
+
+1. **Layer 2 Integration**:
+   - Uniswap unterstützt mehrere Layer 2 Netzwerke, aber stelle sicher, dass dein Code und deine Infrastruktur kompatibel sind.
+
+2. **Routing und Aggregation**:
+   - Nutze DEX-Aggregatoren (z.B. 1inch, Matcha), um immer den besten Preis für Swaps zu erhalten, auch wenn sie nicht über Uniswap laufen.
+
+3. **Token-Verfügbarkeit und Liquidität**:
+   - Prüfe, ob deine Zieltokens auf dem gewählten Layer 2 Netzwerk verfügbar sind und ausreichend Liquidität haben.
+
+## Zusammenfassung
+
+- Für Swaps nutze primär den **SwapRouter** und für Preisanfragen den **Quoter** Contract.
+- Stelle sicher, dass alle Contracts auf dem richtigen Layer 2 Netzwerk konfiguriert sind.
+- Überlege den Einsatz von Aggregatoren oder anderen DEXs für optimale Handelsbedingungen.
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+### Deployments
+- - https://docs.uniswap.org/contracts/v3/reference/deployments
+- https://docs.uniswap.org/contracts/v3/reference/deployments/ethereum-deployments
+
+
+
+
 <br><br>
 <br><br>
 
@@ -641,7 +768,8 @@ _________________________________________________________
 
 ###### PoolCreated
 - https://docs.uniswap.org/contracts/v3/reference/core/interfaces/IUniswapV3Factory#poolcreated
-
+```javascript
+```
 
 
 
