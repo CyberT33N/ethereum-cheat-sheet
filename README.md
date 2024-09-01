@@ -143,6 +143,23 @@ Diese Methoden sind Teil der ERC-20 Schnittstelle oder sind allgemein in Ethereu
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -366,6 +383,10 @@ Diese Protokolle sind grundlegende Bausteine der dezentralen Finanzwelt (DeFi) u
 
 
 
+
+
+
+
 <br><br>
 <br><br>
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -533,15 +554,64 @@ docker run -it -p 30303:30303 ethereum/client-go
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
+_________________________________________________________
+_________________________________________________________
 <br><br>
 <br><br>
 
 # Uniswap
 - Uniswap is a decentralized exchange protocol built on Ethereum. To be more precise, it is an automated liquidity protocol. There is no order book or any centralized party required to make trades. Uniswap allows users to trade without intermediaries, with a high degree of decentralization and censorship-resistance.
 
-Traders can exchange Ethereum tokens (ERC20) on Uniswap without having to trust anyone with their funds. Meanwhile, anyone can lend their crypto to special reserves called liquidity pools. In exchange for providing money to these pools, they earn fees.
+- Traders can exchange Ethereum tokens (ERC20) on Uniswap without having to trust anyone with their funds. Meanwhile, anyone can lend their crypto to special reserves called liquidity pools. In exchange for providing money to these pools, they earn fees.
+
+- **There are different versions v2, v3, v4 and each version ist not tradeable with the other version**
+
+## Contract
+
+<br><br>
+<br><br>
+
+### Factory
+- https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory
+
+<br><br>
+<br><br>
+
+
+#### Events
+
+<br><br>
+<br><br>
+
+
+##### PairCreated (https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory#paircreated)
+- Emitted each time a pair is created via createPair.
+- token0 is guaranteed to be strictly less than token1 by sort order.
+- The final uint log value will be 1 for the first pair created, 2 for the second, etc. (see allPairs/getPair).
+
+
+
+
+
+
+
+
+
+
 
 ## SDK
 - https://ethereum.stackexchange.com/questions/152662/how-to-find-out-right-away-when-a-new-uniswap-pool-is-created-with-liquidity
