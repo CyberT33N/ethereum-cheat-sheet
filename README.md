@@ -580,25 +580,29 @@ _________________________________________________________
 
 - **There are different versions v2, v3, v4 and each version ist not tradeable with the other version**
 
-## Contract
+## v2
+- https://docs.uniswap.org/contracts/v2/overview
 
 <br><br>
 <br><br>
 
-### Factory
+### Contract
+
+<br><br>
+<br><br>
+
+#### Factory
 - https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory
 
 <br><br>
 <br><br>
 
-
-#### Events
+##### Events
 
 <br><br>
 <br><br>
 
-
-##### PairCreated (https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory#paircreated)
+###### PairCreated (https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory#paircreated)
 - Emitted each time a pair is created via createPair.
 - token0 is guaranteed to be strictly less than token1 by sort order.
 - The final uint log value will be 1 for the first pair created, 2 for the second, etc. (see allPairs/getPair).
@@ -606,10 +610,53 @@ _________________________________________________________
 
 
 
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+
+## v3
+- https://docs.uniswap.org/contracts/v3/overview
+- 
+<br><br>
+<br><br>
+
+### Contract
+
+<br><br>
+<br><br>
+
+#### Factory
+- https://docs.uniswap.org/contracts/v3/reference/core/interfaces/IUniswapV3Factory
+
+<br><br>
+<br><br>
+
+##### Events
+- https://docs.uniswap.org/contracts/v3/reference/core/interfaces/IUniswapV3Factory#events
+
+<br><br>
+<br><br>
+
+###### PoolCreated
+- https://docs.uniswap.org/contracts/v3/reference/core/interfaces/IUniswapV3Factory#poolcreated
 
 
 
 
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
 
 
 
