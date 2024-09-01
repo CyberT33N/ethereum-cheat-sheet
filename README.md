@@ -769,6 +769,60 @@ myEvent.on('error', (error) => {
 ###### PoolCreated
 - https://docs.uniswap.org/contracts/v3/reference/core/interfaces/IUniswapV3Factory#poolcreated
 ```javascript
+
+// Uniswap V3 Factory Contract Adresse und ABI
+const uniswapV3FactoryAddress = '0x1F98431c8aD98523631AE4a59f267346ea31F984';
+const uniswapV3FactoryABI = [
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "token0",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "token1",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint24",
+                "name": "fee",
+                "type": "uint24"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "pool",
+                "type": "address"
+            }
+        ],
+        "name": "PoolCreated",
+        "type": "event"
+    }
+];
+
+// Erstelle eine Contract-Instanz
+const uniswapV3FactoryContract = new web3.eth.Contract(uniswapV3FactoryABI, uniswapV3FactoryAddress);
+
+// Lausche auf das `PoolCreated` Event
+uniswapV3FactoryContract.events.PoolCreated({
+    fromBlock: 'latest'
+}, (error, event) => {
+    if (error) {
+        console.error('Fehler beim Abfangen des Events:', error);
+    } else {
+        console.log('Neuer Pool erstellt:');
+        console.log('Token0:', event.returnValues.token0);
+        console.log('Token1:', event.returnValues.token1);
+        console.log('Fee:', event.returnValues.fee);
+        console.log('Pool-Adresse:', event.returnValues.pool);
+    }
+});
 ```
 
 
